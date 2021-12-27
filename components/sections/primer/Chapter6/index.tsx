@@ -29,8 +29,8 @@ const Chapter6 = () => {
           </p>
           <p
             css={css`
-              font-size: 28px;
-              line-height: 38px;
+              font-size: 20px;
+              line-height: 30px;
             `}>
             {t("page-primer-contents-delegators-text-two")}
           </p>

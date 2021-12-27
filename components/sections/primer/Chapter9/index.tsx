@@ -67,8 +67,8 @@ const Chapter9 = ({ onChange, data }) => {
               <Button style={{ marginBottom: 32 }}>
                 {t("page-primer-contents-involved-interested-cta-one")}
               </Button>
-
             </Link>
+            
             <p>{t("page-primer-contents-involved-interested-text-two")}</p>
             <Button
               href="https://explorer.livepeer.org/"
@@ -103,7 +103,7 @@ const Chapter9 = ({ onChange, data }) => {
             <Link href="/video-miners" passHref>
               <Button>{t("page-primer-contents-involved-miner-cta")}</Button>
             </Link>
-          </Item>
+          </Item> 
 
 
 

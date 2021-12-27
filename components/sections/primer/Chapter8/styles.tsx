@@ -53,7 +53,7 @@ export const Section2 = styled.div({
   alignItems: "center",
   justifyContent: "center",
   flexDirection: "column-reverse",
-  ["@media (min-width: 1024px)"]: {
+  ["@media (min-width: 800px)"]: {
     flexDirection: "row",
     marginBottom: 120,
   },

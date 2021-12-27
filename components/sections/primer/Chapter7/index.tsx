@@ -30,10 +30,10 @@ const Chapter7 = ({ data }) => {
             margin-bottom: 40px;
             @media (min-width: 1024px) {
               position: relative;
-              margin-bottom: 0;
-              margin-left: -370px;
-              margin-right: 100px;
-              min-width: 972px;
+              margin-bottom: -251px;
+              margin-left: -101px;
+              margin-right: 101px;
+              min-width: 700px;
               min-height: 816px;
             }
           `}>

@@ -1,7 +1,8 @@
 import { useTranslation } from "next-i18next";
+import * as React from 'react';
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { Container, Section1, Title, Text, Ethereum } from "./styles";
+import { Container, Section1, Title, Ethereum, Text } from "./styles";
 
 const threshold = [0.5];
 

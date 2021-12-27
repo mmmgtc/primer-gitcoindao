@@ -20,7 +20,7 @@ export const Section1 = styled.div({
   },
 });
 
-export const PieChart = styled.img({
+export const PuzzleHands = styled.img({
   width: "100%",
   ["@media (min-width: 1024px)"]: {
     marginRight: 120,

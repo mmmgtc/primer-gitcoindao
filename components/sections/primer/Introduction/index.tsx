@@ -11,7 +11,7 @@ import {
   Section4,
   Section5,
   Section6,
-  PieChart,
+  PuzzleHands,
   TranscodingIn,
   TranscodingOut,
   TranscoderRunning,
@@ -34,7 +34,7 @@ const Introduction = ({ onChange }) => {
     <div ref={ref}>
       <Container>
         <Section1>
-          <PieChart src="/images/primer/collaboration-public-good.svg" />
+          <PuzzleHands src="/images/primer/section-2-puzzle-hands.svg"/>
           <div
             css={css`
               margin-bottom: 40px;

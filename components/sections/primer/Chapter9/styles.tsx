@@ -12,9 +12,9 @@ export const Container = styled.div({
 
 export const Title = styled.h2({
   transform: "rotate(3deg)",
-  fontSize: "54px",
+  fontSize: "45px",
   textAlign: "center",
-  lineHeight: "71px",
+  lineHeight: "55px",
   fontWeight: 100,
   textTransform: "uppercase",
   marginBottom: 120,
@@ -27,8 +27,8 @@ export const Title = styled.h2({
     borderRadius: 1000,
     position: "absolute",
     backgroundColor: "#FFD184",
-    width: 215,
-    height: 215,
+    width: 251,
+    height: 251,
     zIndex: -1,
   },
 });

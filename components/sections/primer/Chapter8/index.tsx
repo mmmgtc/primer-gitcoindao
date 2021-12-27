@@ -71,6 +71,8 @@ const Chapter8 = ({ data, onChange }) => {
         <Rounds src="/images/primer/section-19-grants-rounds.svg" />
         <RoundMobile src="/images/primer/section-19-grants-rounds.svg" />
       </Section1>
+
+      
       <Section2>
         <div
           css={css`
