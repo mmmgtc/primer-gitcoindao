@@ -39,19 +39,8 @@ export const Section2 = styled.div({
   },
 });
 
-export const TranscodingIn = styled.img({
-  width: "100%",
-  transform: "translateX(70px) scale(1.5)",
-  ["@media (min-width: 768px)"]: {
-    transform: "initial",
-    width: "auto",
-  },
-  ["@media (min-width: 1024px)"]: {
-    width: "auto",
-  },
-});
 
-export const TranscodingOut = styled.img({
+export const AstronautsAndChain = styled.img({
   width: "100%",
   marginBottom: 40,
   left: "0px",
@@ -69,7 +58,7 @@ export const TranscodingOut = styled.img({
   },
 });
 
-export const TranscoderRunning = styled.img({
+export const HandsAndEth = styled.img({
   width: "100%",
   marginBottom: 40,
   ["@media (min-width: 768px)"]: {
@@ -131,14 +120,14 @@ export const Section6 = styled.div({
   },
 });
 
-export const Scissors = styled.img({
+export const GitcoinAndPlanets = styled.img({
   width: "100%",
-  marginBottom: 40,
+  marginBottom: 11,
   ["@media (min-width: 1024px)"]: {
     position: "relative",
     marginBottom: 0,
-    marginLeft: "-380px",
-    marginRight: "120px",
+    marginLeft: "-250px",
+    marginRight: "11px",
   },
 });
 

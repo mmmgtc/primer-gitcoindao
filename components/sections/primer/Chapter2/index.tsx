@@ -20,7 +20,7 @@ const Chapter2 = () => {
       <List>
         <Item>
           <Header>
-            <Icon src={"/images/primer/development.svg"} />
+            <Icon src={"/images/primer/section-8-builders.svg"} />
             <Text>{t("page-primer-contents-who-h3-one")}</Text>
           </Header>
           <Body>
@@ -29,7 +29,7 @@ const Chapter2 = () => {
         </Item>
         <Item>
           <Header>
-            <Icon src={"/images/primer/mobile-app.svg"} />
+            <Icon src={"/images/primer/section-8-users.svg"} />
             <Text>{t("page-primer-contents-who-h3-two")}</Text>
           </Header>
           <Body>
@@ -38,7 +38,7 @@ const Chapter2 = () => {
         </Item>
         <Item>
           <Header>
-            <Icon src={"/images/primer/twitch.svg"} />
+            <Icon src={"/images/primer/section-8-you.svg"} />
             <Text>{t("page-primer-contents-who-h3-three")}</Text>
           </Header>
           <Body>

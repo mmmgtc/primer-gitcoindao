@@ -7,6 +7,8 @@ import { Container, Section1, Title, Ethereum, Text } from "./styles";
 const threshold = [0.5];
 
 const Chapter1 = ({ onChange }) => {
+  /*it was "common" before indicating to use translations from common.json which I deleted & 
+    only primer.json is needed for us. */
   const { t } = useTranslation(["primer"]);
   const [ref, inView, entry] = useInView({ threshold });
 

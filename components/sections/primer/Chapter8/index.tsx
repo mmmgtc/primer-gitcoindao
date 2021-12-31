@@ -19,19 +19,7 @@ import { useTranslation } from "next-i18next";
 const threshold = [0.3];
 
 const Chapter8 = ({ data, onChange }) => {
-  const translationData = {
-    interpolation: { escapeValue: false },
-    ethereumBlocksPerRound: "5760",
-    blockTime: data.blockTime,
-    hoursPerRound: data.hoursPerRound,
-    inflation: data.inflation,
-    totalSupply: data.totalSupply,
-    mintableTokens: data.mintableTokens,
-    totalStaked: data.totalBonded,
-    participationRate: data.participationRate,
-    targetRate: data.targetBondingRate,
-    inflationChange: data.inflationChange,
-  };
+
   const { t } = useTranslation(["primer"]);
   const [ref, inView, entry] = useInView({ threshold });
 
@@ -62,14 +50,13 @@ const Chapter8 = ({ data, onChange }) => {
             dangerouslySetInnerHTML={{
               __html: t(
                 "page-primer-contents-rounds-text-one",
-                translationData
               ),
             }}
           />
           <p>{t("page-primer-contents-rounds-text-two")}</p>
         </div>
-        <Rounds src="/images/primer/section-19-grants-rounds.svg" />
-        <RoundMobile src="/images/primer/section-19-grants-rounds.svg" />
+        <Rounds src="/images/primer/section-18-grants-rounds.svg" />
+        <RoundMobile src="/images/primer/section-18-grants-rounds.svg" />
       </Section1>
 
       
@@ -95,7 +82,6 @@ const Chapter8 = ({ data, onChange }) => {
             dangerouslySetInnerHTML={{
               __html: t(
                 "page-primer-contents-rounds-text-three",
-                translationData
               ),
             }}
           />
@@ -103,7 +89,6 @@ const Chapter8 = ({ data, onChange }) => {
             dangerouslySetInnerHTML={{
               __html: t(
                 "page-primer-contents-rounds-text-four",
-                translationData
               ),
             }}
           />
@@ -118,7 +103,7 @@ const Chapter8 = ({ data, onChange }) => {
             }
           `}
           dangerouslySetInnerHTML={{
-            __html: t("page-primer-contents-rounds-text-five", translationData),
+            __html: t("page-primer-contents-rounds-text-five",),
           }}
         />
       </Section3>

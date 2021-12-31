@@ -14,18 +14,12 @@ import GitcoinLogo from "components/svgs/gitcoin-logo";
 import { useEffect, useCallback, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import Link from "next/link";
-import TopNotification, { TopNotificationProps } from "./top-notification";
+
 import Menu from "components/sections/primer/Menu";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import LanguageDropdown from "components/primitives/language-dropdown";
+//import LanguageDropdown from "components/primitives/language-dropdown";
 
-type LinkType = {
-  label: string;
-  href: string;
-  isExternal?: boolean;
-  asPath?: string;
-};
 
 const navHeight = "72px";
 
@@ -36,7 +30,9 @@ export type NavProps = {
 };
 
 const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
-  const { t } = useTranslation(["common"]);
+  /*it was "common" before indicating to use translations from common.json which I deleted & 
+    only primer.json is needed for us. */
+  const { t } = useTranslation(["primer"]); 
   const router = useRouter();
   const [hasScrolled, setHasScrolled] = useState(false);
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState(false);
@@ -56,28 +52,6 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
     };
   }, [handleScroll]);
 
-  const links: LinkType[] = [
-    {
-      label: t("nav-about"),
-      href: "/about",
-    },
-    {
-      label: t("nav-developers"),
-      href: "/developers",
-    },
-    {
-      label: t("nav-tokenholders"),
-      href: "/tokenholders",
-    },
-    {
-      label: t("nav-video-miners"),
-      href: "/video-miners",
-    },
-    {
-      label: t("nav-resources"),
-      href: "/resources",
-    },
-  ];
 
   const isDark = background === "black" || background === "dark";
   let bg: string;
@@ -146,8 +120,8 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
             height: navHeight,
           }}>
           <GitcoinLogo
-            isDark={isDark}
-            disableHover={isPrimer ? true : false}
+
+
           />
           <Box
             sx={{
@@ -157,32 +131,11 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               ".nav-link:not(:last-child)": { mr: 56 },
               display: [isPrimer ? "null" : "none", null, "flex"],
             }}>
-            {!isPrimer &&
-              links.map((link) =>
-                link.isExternal ? (
-                  <NavLink
-                    className="nav-link"
-                    key={`desktop-nav-link-${link.label}`}
-                    href={link.href}
-                    data-dark={isDark}
-                    target="_blank">
-                    {link.label}
-                  </NavLink>
-                ) : (
-                  <Link
-                    key={`desktop-nav-link-${link.label}`}
-                    href={link.href}
-                    as={link.asPath}
-                    passHref>
-                    <NavLink className="nav-link" data-dark={isDark}>
-                      {link.label}
-                    </NavLink>
-                  </Link>
-                )
-              )}
+
+
             {!isPrimer && (
               <NavLink className="nav-link" as={Box} data-dark={isDark}>
-                <LanguageDropdown />
+
               </NavLink>
             )}
             {isPrimer && (
@@ -229,7 +182,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               justifyContent: "space-between",
               height: navHeight,
             }}>
-            <GitcoinLogo isDark={isDark} />
+
             <Flex sx={{ alignItems: "center" }}>
               <NavLink
                 sx={{
@@ -241,7 +194,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
                 className="nav-link"
                 as={Box}
                 data-dark={isDark}>
-                <LanguageDropdown />
+
               </NavLink>
               <IconButton
                 sx={{ color, fontSize: 6 }}
@@ -260,53 +213,9 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               justifyContent: "space-between",
               height: `calc(100vh - ${navHeight})`,
             }}>
-            <Flex sx={{ flexDirection: "column" }}>
-              {links.map((link) =>
-                link.isExternal ? (
-                  <A
-                    key={`link-${link.label}-${link.href}`}
-                    href={link.href}
-                    target="_blank"
-                    sx={{
-                      color,
-                      textAlign: "center",
-                      fontSize: 7,
-                      fontWeight: 600,
-                    }}>
-                    {link.label}
-                  </A>
-                ) : (
-                  <Link
-                    key={`link-${link.label}-${link.href}`}
-                    href={link.href}
-                    passHref>
-                    <A
-                      sx={{
-                        color,
-                        textAlign: "center",
-                        fontSize: 7,
-                        fontWeight: 600,
-                      }}>
-                      {link.label}
-                    </A>
-                  </Link>
-                )
-              )}
-            </Flex>
 
-            <Flex sx={{ flexDirection: "column" }}>
-              <Button
-                sx={{ mb: 3 }}
-                onClick={() => {
-                  setMobileMenuIsOpen(false);
-                  router.push("/#get-started");
-                }}>
-                {t("nav-get-started")}
-              </Button>
-              <Text sx={{ fontSize: "14px", textAlign: "center" }}>
-                © Livepeer, Inc. {new Date().getFullYear()}
-              </Text>
-            </Flex>
+
+
           </Container>
         </Box>
       </Box>

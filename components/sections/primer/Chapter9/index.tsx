@@ -45,12 +45,12 @@ const Chapter9 = ({ onChange, data }) => {
             dangerouslySetInnerHTML={{
               __html: t("page-primer-contents-involved-text-one", {
                 interpolation: { escapeValue: false },
-                totalDelegators: data.totalDelegators,
+
               }),
             }}
           />
         </div>
-        <Flowers src="/images/primer/section-21-growing.svg" />
+        <Flowers src="/images/primer/section-20-growing.svg" />
       </Section>
       <Section>
         <List>

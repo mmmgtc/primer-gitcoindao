@@ -18,19 +18,8 @@ import Footer from "components/sections/primer/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import {
-  getTotalDelegators,
-  getProtocolStatistics,
-} from "lib/document-helpers";
-/*
-import http from "http";
 
-const server = http.createServer();
-const port = process.env.PORT;
-server.listen(port, () => {
-  console.log("server running")
-})
-*/
+
 const Primer = ({ data }) => {
   const { t } = useTranslation(["primer"]);
   const { locale } = useRouter();
@@ -105,15 +94,6 @@ const Primer = ({ data }) => {
 };
 
 export async function getStaticProps({ locale }) {
-  let totalDelegators = await getTotalDelegators();
-  let {
-    inflation,
-    inflationChange,
-    totalSupply,
-    totalActiveStake,
-    targetBondingRate,
-    participationRate,
-  } = await getProtocolStatistics();
 
   let ethGasStationResponse = await fetch(
     "https://ethgasstation.info/json/ethgasAPI.json"
@@ -122,40 +102,9 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common", "primer", "home"])),
+      ...(await serverSideTranslations(locale, ["primer"])),
       locale,
-      data: {
-        totalSupply: Intl.NumberFormat(locale, {
-          maximumFractionDigits: 2,
-        }).format(+totalSupply),
-        totalDelegators: Intl.NumberFormat(locale, {
-          maximumFractionDigits: 2,
-        }).format(+totalDelegators),
-        inflation: Intl.NumberFormat(locale, {
-          maximumFractionDigits: 10,
-        }).format(inflation / 10000000),
-        inflationChange: Intl.NumberFormat(locale, {
-          maximumFractionDigits: 10,
-        }).format(inflationChange / 10000000),
-        totalBonded: Intl.NumberFormat(locale, {
-          maximumFractionDigits: 2,
-        }).format(+totalActiveStake),
-        targetBondingRate: Intl.NumberFormat(locale, {
-          maximumFractionDigits: 2,
-        }).format(targetBondingRate / 10000000),
-        participationRate: Intl.NumberFormat(locale, {
-          maximumFractionDigits: 2,
-        }).format(participationRate * 100),
-        mintableTokens: Intl.NumberFormat(locale, {
-          maximumFractionDigits: 2,
-        }).format((inflation / 1000000000) * totalSupply),
-        hoursPerRound: Intl.NumberFormat(locale, {
-          maximumFractionDigits: 2,
-        }).format((block_time * 5760) / 60 / 60),
-        blockTime: Intl.NumberFormat(locale, {
-          maximumFractionDigits: 2,
-        }).format(block_time),
-      },
+      data: {},
     },
     revalidate: 1,
   };

@@ -12,10 +12,9 @@ import {
   Section5,
   Section6,
   PuzzleHands,
-  TranscodingIn,
-  TranscodingOut,
-  TranscoderRunning,
-  Scissors,
+  AstronautsAndChain,
+  HandsAndEth,
+  GitcoinAndPlanets,
 } from "./styles";
 
 const threshold = [0.1];
@@ -61,10 +60,9 @@ const Introduction = ({ onChange }) => {
             <p>{t("page-primer-contents-intro-text-two")}</p>
             <p>{t("page-primer-contents-intro-text-three")}</p>
           </div>
-          <TranscodingIn src="" />
         </Section2>
         <Section3>
-          <TranscodingOut src="/images/primer/section-4-chain.svg" />
+          <AstronautsAndChain src="/images/primer/section-3-astronauts-and-chain.svg" />
           <div
             css={css`
               @media (min-width: 1024px) {
@@ -87,10 +85,10 @@ const Introduction = ({ onChange }) => {
             `}>
             <p>{t("page-primer-contents-intro-text-five")}</p>
           </div>
-          <TranscoderRunning src="/images/primer/section-5-hands.svg" />
+          <HandsAndEth src="/images/primer/section-5-hands.svg" />
         </Section4>
         <Section5>
-          <Scissors src="/images/primer/scissors.svg" />
+          <GitcoinAndPlanets src="/images/primer/section-6-gitcoin-and-rockets.svg" />
           <div
             css={css`
               margin-bottom: 40px;
