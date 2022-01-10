@@ -11,7 +11,7 @@ import {
   Section4,
   Section5,
   Section6,
-  PuzzleHands,
+  EthAstronaut,
   AstronautsAndChain,
   HandsAndEth,
   GitcoinAndPlanets,
@@ -33,7 +33,7 @@ const Introduction = ({ onChange }) => {
     <div ref={ref}>
       <Container>
         <Section1>
-          <PuzzleHands src="/images/primer/section-2-puzzle-hands.svg"/>
+          <EthAstronaut src="/images/primer/section-2-eth-astronaut.svg"/>
           <div
             css={css`
               margin-bottom: 40px;

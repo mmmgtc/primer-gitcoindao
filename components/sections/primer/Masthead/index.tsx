@@ -17,6 +17,7 @@ const Masthead = ({ title }) => {
                 maxWidth: 550,
                 color: "#FFA3A3",
                 minWidth: "100%",
+                
               }}
             />
           </Heading>

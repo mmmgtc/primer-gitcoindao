@@ -95,14 +95,10 @@ const Primer = ({ data }) => {
 
 export async function getStaticProps({ locale }) {
 
-  let ethGasStationResponse = await fetch(
-    "https://ethgasstation.info/json/ethgasAPI.json"
-  );
-  let { block_time } = await ethGasStationResponse.json();
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["primer"])),
+      ...(await serverSideTranslations(locale, ["primer"])), //earlier was "common" & "home" too since we had .json files for them too but we need only "primer"
       locale,
       data: {},
     },

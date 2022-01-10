@@ -20,7 +20,7 @@ export const Section1 = styled.div({
   },
 });
 
-export const PuzzleHands = styled.img({
+export const EthAstronaut = styled.img({
   width: "100%",
   ["@media (min-width: 1024px)"]: {
     marginRight: 120,

@@ -54,7 +54,7 @@ const PageLayout: FC<Props> = ({
       }
 
       .primer {
-        font-family: agrandir;
+        font-family: 'Miriam Libre', sans-serif;
         font-size: 18px;
         line-height: 28px;
       }
@@ -65,7 +65,7 @@ const PageLayout: FC<Props> = ({
       .primer h5,
       .primer h6 {
         font-weight: normal;
-        font-family: agrandir;
+        font-family: 'Miriam Libre', sans-serif;
         margin-top: 0;
       }
 

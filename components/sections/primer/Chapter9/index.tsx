@@ -85,7 +85,7 @@ const Chapter9 = ({ onChange, data }) => {
               <Icon src={"/images/primer/pick.svg"} />
             </Header>
             <Heading>{t("page-primer-contents-involved-engineer")}</Heading>
-            <p>{t("home:page-home-developers-text")}</p>
+            <p>{t("page-primer-contents-involved-engineer-text")}</p>
             <Link href="https://gitcoindao.com" passHref>
 
               <Button target="_blank">{t("page-primer-contents-involved-miner-cta")}</Button>
