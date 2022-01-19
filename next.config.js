@@ -7,7 +7,7 @@ const withTM = require('next-transpile-modules')([
   'gsap/MotionPathPlugin',
   'gsap/ScrollTrigger',
   'gsap/SplitText',
-  'react-use-mailchimp',
+  //'react-use-mailchimp',
 ]);
 
 module.exports = withPlugins([
@@ -20,9 +20,9 @@ module.exports = withPlugins([
       pageExtensions: ['mdx', 'tsx'],
       webpack(config, _options) {
         config.module.rules.push({
-          test: /\.(graphql|gql)$/,
+          
           exclude: /node_modules/,
-          loader: 'graphql-tag/loader',
+          
         });
         config.module.rules.push({
           test: /\.md$/,
