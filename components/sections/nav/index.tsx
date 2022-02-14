@@ -30,8 +30,7 @@ export type NavProps = {
 };
 
 const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
-  /*it was "common" before indicating to use translations from common.json which I deleted & 
-    only primer.json is needed for us. */
+  
   const { t } = useTranslation(["primer"]); 
   const router = useRouter();
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -39,8 +38,13 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
 
   const handleScroll = useCallback(() => {
     const { scrollTop } = document.documentElement;
-    if (scrollTop > 0) setHasScrolled(true);
-    else setHasScrolled(false);
+    if (scrollTop > 0){
+      setHasScrolled(true);
+    } 
+    else {
+      setHasScrolled(false);
+      
+    }
   }, []);
 
   useEffect(() => {
@@ -110,34 +114,28 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
           transition: "box-shadow .3s, top .3s",
           boxShadow: hasScrolled ? "magical" : "none",
           backdropFilter:
-            isPrimer && hasScrolled ? "saturate(180%) blur(5px)" : "none",
+            isPrimer && hasScrolled ? "saturate(180%) blur(7px)" : "none",
         }}>
         <Container
           sx={{
             display: "flex",
-            alignItems: "center",
+            alignItems: "right",
             justifyContent: "space-between",
             height: navHeight,
           }}>
-          <GitcoinLogo
-
-
-          />
+          <GitcoinLogo/>
           <Box
             sx={{
               ".nav-link": {
                 fontSize: 16,
+                position: "fixed",
+                top: "0",
               },
               ".nav-link:not(:last-child)": { mr: 56 },
               display: [isPrimer ? "null" : "none", null, "flex"],
             }}>
 
-
-            {!isPrimer && (
-              <NavLink className="nav-link" as={Box} data-dark={isDark}>
-
-              </NavLink>
-            )}
+            
             {isPrimer && (
               <Box
                 sx={{
@@ -150,17 +148,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
               </Box>
             )}
           </Box>
-          {!isPrimer && (
-            <IconButton
-              sx={{
-                color,
-                display: ["block", "block", "none"],
-                fontSize: 6,
-              }}
-              onClick={() => setMobileMenuIsOpen(true)}>
-              <FiMenu size="24px" />
-            </IconButton>
-          )}
+
         </Container>
         <Box
           sx={{
@@ -168,7 +156,7 @@ const Nav = ({ background, isInmersive, isPrimer = false }: NavProps) => {
             color,
             position: "fixed",
             top: 0,
-            height: mobileMenuIsOpen ? "100vh" : 0,
+            height: mobileMenuIsOpen ? "200vh" : 0,
             transition: "height .2s",
             overflow: "hidden",
             width: "100%",

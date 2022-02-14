@@ -1,27 +1,14 @@
 import { Root, Container, Body, Heading, Subheading, Arrow } from "./styles";
 
-const Masthead = ({ title }) => {
+const Masthead = ({ title, mainTitle }) => {
   return (
     <Root>
       <Container>
         <Body>
           <Subheading>{title}</Subheading>
-          <Heading>
-            <img
-              src="/images/primer/section-1-gitcoin-community.svg"
-              width="1200"
-              height="700"
-              style={{
-                height: "auto",
-                width: "100%",
-                maxWidth: 550,
-                color: "#FFA3A3",
-                minWidth: "100%",
-                
-              }}
-            />
-          </Heading>
+          <Heading className="primer-main-title" >{mainTitle}</Heading>
         </Body>
+
         <Arrow>
           <svg viewBox="0 0 22 14">
             <polyline
@@ -34,6 +21,7 @@ const Masthead = ({ title }) => {
             />
           </svg>
         </Arrow>
+        
       </Container>
     </Root>
   );

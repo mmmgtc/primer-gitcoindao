@@ -10,12 +10,13 @@ const Footer = () => {
     <div
       css={css`
         padding: 40px 24px;
-        display: flex;
+        margin-left: 600px;
+        display: right;
         justify-content: space-between;
-        align-items: center;
+        align-items: right;
         font-size: 14px;
       `}>
-      <div>GitcoinDAO: {t("page-primer-meta-title")}</div>
+      
       <Link
         style={{
           textDecoration: "none",
@@ -26,7 +27,7 @@ const Footer = () => {
         spy={true}
         smooth={true}
         offset={-50}
-        duration={500}>
+        duration={1000}>
         <div
           css={css`
             display: flex;

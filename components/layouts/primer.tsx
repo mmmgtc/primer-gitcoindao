@@ -30,25 +30,22 @@ const PageLayout: FC<Props> = ({
     </Box>
     <style global jsx>{`
       @font-face {
-        font-family: "agrandir";
-        src: url("/fonts/agrandir-grandlight-webfont.woff2") format("woff2"),
-          url("/fonts/agrandir-grandlight-webfont.woff") format("woff");
+        font-family: 'Miriam Libre', sans-serif;
+        src: url('https://fonts.googleapis.com/css2?family=Miriam+Libre&display=swap');
         font-weight: 100;
         font-style: normal;
       }
 
       @font-face {
-        font-family: "agrandir";
-        src: url("/fonts/agrandir-regular-webfont.woff2") format("woff2"),
-          url("/fonts/agrandir-regular-webfont.woff") format("woff");
+        font-family: 'Miriam Libre', sans-serif;
+        src: url('https://fonts.googleapis.com/css2?family=Miriam+Libre&display=swap');
         font-weight: normal;
         font-style: normal;
       }
 
       @font-face {
-        font-family: "agrandir_tight";
-        src: url("/fonts/agrandir-tight-webfont.woff2") format("woff2"),
-          url("/fonts/agrandir-tight-webfont.woff") format("woff");
+        font-family: 'Miriam Libre', sans-serif;
+        src: url('https://fonts.googleapis.com/css2?family=Miriam+Libre&display=swap');
         font-weight: normal;
         font-style: normal;
       }
@@ -57,6 +54,13 @@ const PageLayout: FC<Props> = ({
         font-family: 'Miriam Libre', sans-serif;
         font-size: 18px;
         line-height: 28px;
+      }
+
+      .primer-main-title {
+        font-family: 'Miriam Libre', sans-serif;
+        font-size: 90px;
+        line-height: 100px;
+        margin-left: -40px;
       }
       .primer h1,
       .primer h2,
@@ -84,6 +88,11 @@ const PageLayout: FC<Props> = ({
         margin-top: 0;
       }
 
+      .primer ul {
+        margin-bottom: 11px;
+        margin-top: 0;
+      }
+
       .primer strong {
         font-size: 16px;
         letter-spacing: 0.8px;
@@ -106,6 +115,10 @@ const PageLayout: FC<Props> = ({
         transition: background-color 0.6s;
       }
       .primer .chapter1 {
+        background-color: #FAADBF;
+        transition: background-color 0.6s;
+      }
+      .primer .chapter2 {
         background-color: #B3FFED;
         transition: background-color 0.6s;
       }
@@ -114,21 +127,23 @@ const PageLayout: FC<Props> = ({
         transition: background-color 0.6s;
       }
       .primer .chapter4 {
-        background-color: #C9B8FF;
-        transition: background-color 0.6s;
-      }
-      .primer .chapter5 {
-        background-color: #B3FFED
-        transition: background-color 0.6s;
-      }
-      .primer .chapter8 {
         background-color: #FAADBF;
         transition: background-color 0.6s;
       }
-      .primer .chapter9 {
-        background-color: #F0EBFF;
+      .primer .chapter5 {
+        background-color: #B3FFED;
         transition: background-color 0.6s;
       }
+
+      .social-icons li{
+        display: inline-block;
+        margin-bottom: 40px;
+        padding: 15px;
+        vertical-align: middle;
+      }
+     
+
+    }
     `}</style>
   </>
 );

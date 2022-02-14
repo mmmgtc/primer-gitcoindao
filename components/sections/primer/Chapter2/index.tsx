@@ -1,52 +1,37 @@
+/** @jsx jsx */
+import { jsx, css } from "@emotion/core";
 import { useTranslation } from "next-i18next";
-import {
-  Container,
-  Title,
-  List,
-  Item,
-  Header,
-  Icon,
-  Text,
-  Body,
-} from "./styles";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { Root, Container, Section, Title, Text } from "./styles";
 
-const Chapter2 = () => {
-  // eslint-disable-next-line no-undef
+const threshold = [0.1];
+
+const Chapter2 = ({ onChange }) => {
   const { t } = useTranslation(["primer"]);
+  const [ref, inView, entry] = useInView({ threshold });
+
+  useEffect(() => {
+    if (inView) {
+      onChange();
+    }
+  }, [inView]);
 
   return (
-    <Container>
-      <Title>{t("page-primer-contents-who")}</Title>
-      <List>
-        <Item>
-          <Header>
-            <Icon src={"/images/primer/section-8-builders.svg"} />
-            <Text>{t("page-primer-contents-who-h3-one")}</Text>
-          </Header>
-          <Body>
-            <p>{t("page-primer-contents-who-text-one")}</p>
-          </Body>
-        </Item>
-        <Item>
-          <Header>
-            <Icon src={"/images/primer/section-8-users.svg"} />
-            <Text>{t("page-primer-contents-who-h3-two")}</Text>
-          </Header>
-          <Body>
-            <p>{t("page-primer-contents-who-text-two")}</p>
-          </Body>
-        </Item>
-        <Item>
-          <Header>
-            <Icon src={"/images/primer/section-8-you.svg"} />
-            <Text>{t("page-primer-contents-who-h3-three")}</Text>
-          </Header>
-          <Body>
-            <p>{t("page-primer-contents-who-text-three")}</p>
-          </Body>
-        </Item>
-      </List>
-    </Container>
+    <Root ref={ref}>
+      <Container>
+        <Title>{t("page-primer-contents-token")}</Title>
+
+        <Section>
+            <Text>
+              <p>{t("page-primer-contents-token-text-one")}</p>
+              <p>{t("page-primer-contents-token-text-two")}</p> 
+            </Text>      
+          
+        </Section>
+        
+      </Container>
+    </Root>
   );
 };
 

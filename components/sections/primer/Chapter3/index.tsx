@@ -1,26 +1,14 @@
-/** @jsx jsx */
-import { jsx, css } from "@emotion/core";
 import { useTranslation } from "next-i18next";
+import * as React from 'react';
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import {
-  Container,
-  Title,
-  Section1,
-  Section2,
-  Section3,
-  Section4,
-  Heading,
-  Body,
-  Alice,
-  Bob,
-  Devices,
-  Actors,
-} from "./styles";
+import { Container, Text, Section, AstronautsBalloons } from "./styles";
 
-const threshold = [0.1];
+const threshold = [0.5];
 
 const Chapter3 = ({ onChange }) => {
+  /*it was "common" before indicating to use translations from common.json which I deleted & 
+    only primer.json is needed for us. */
   const { t } = useTranslation(["primer"]);
   const [ref, inView, entry] = useInView({ threshold });
 
@@ -32,69 +20,28 @@ const Chapter3 = ({ onChange }) => {
 
   return (
     <Container ref={ref}>
-      <Title>{t("page-primer-contents-how")}</Title>
-      <Section1
-        css={css`
-          margin-bottom: 40px;
-          @media (min-width: 1024px) {
-            margin-bottom: 24px;
-          }
-        `}>
-        <Alice src="/images/primer/section-9-astronaut-dancing.svg" />
-        <Body
-          css={css`
-            margin-bottom: 40px;
-            @media (min-width: 1024px) {
-              margin-bottom: 0;
-            }
-          `}>
-          <Heading>{t("page-primer-contents-how-h3-one")}</Heading>
-          <p>{t("page-primer-contents-how-text-one")}</p>
-        </Body>
-      </Section1>
-      <Section2>
-        <Body
-          css={css`
-            margin-bottom: 40px;
-            @media (min-width: 1024px) {
-              margin-right: 160px;
-              margin-bottom: 0;
-            }
-          `}>
-          <Heading>{t("page-primer-contents-how-h3-two")}</Heading>
-          <p>{t("page-primer-contents-how-text-two")}</p>
-        </Body>
-        <Bob src="/images/primer/section-10-astronaut-standing.svg" />
-      </Section2>
-      <Section3>
-        <Devices src="/images/primer/section-11-astronauts-and-screens.svg" />
-        <Body
-          css={css`
-            margin-bottom: 40px;
-            @media (min-width: 1024px) {
-              margin-bottom: 0;
-            }
-          `}>
-          <p>{t("page-primer-contents-how-text-three")}</p>
+      <Section>
+        <AstronautsBalloons src="/images/primer/section-10-astronauts-balloons.svg" />
+        <Text>
+            <p>{t("page-primer-contents-token-text-three")}</p>
+            
+            <li style={{marginBottom: "10px"}} dangerouslySetInnerHTML={{__html: t("page-primer-contents-token-text-four", {
+                interpolation: { escapeValue: false },
+              }),}} 
+            />
 
-          <p>{t("page-primer-contents-how-text-four")}</p>
-        </Body>
-      </Section3>
-      <Section4>
-        <Body
-          css={css`
-            margin-bottom: 40px;
-            @media (min-width: 1024px) {
-              margin-right: 80px;
-              margin-bottom: 0;
-            }
-          `}>
-          <p>{t("page-primer-contents-how-text-five")}</p>
+            <li style={{marginBottom: "10px"}} dangerouslySetInnerHTML={{__html: t("page-primer-contents-token-text-five", {
+                interpolation: { escapeValue: false },
+              }),}} 
+            />
 
-          <p>{t("page-primer-contents-how-text-six")}</p>
-        </Body>
-        <Actors src="/images/primer/section-12-astronauts-jumping-standing.svg" />
-      </Section4>
+            <li style={{marginBottom: "10px"}} dangerouslySetInnerHTML={{__html: t("page-primer-contents-token-text-six", {
+                interpolation: { escapeValue: false },
+              }),}} 
+            />            
+                        
+        </Text>
+      </Section>
     </Container>
   );
 };

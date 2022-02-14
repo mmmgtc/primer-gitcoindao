@@ -1,47 +1,34 @@
 /** @jsx jsx */
 import { jsx, css } from "@emotion/core";
+import { Container, Text, Section1, Section2, Section3, Title, 
+          AstronautAndRobot, AstronautStanding, AstronautsMeteorLamp } from "./styles";
 import { useTranslation } from "next-i18next";
-import { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import { Container, Section, Title, Orchestration } from "./styles";
 
-const threshold = [0.2];
-
-const Chapter4 = ({ onChange }) => {
+const Chapter4 = ({ data }) => {
   const { t } = useTranslation(["primer"]);
-  const [ref, inView, entry] = useInView({ threshold });
-
-  useEffect(() => {
-    if (inView) {
-      onChange();
-    }
-  }, [inView]);
 
   return (
-    <Container ref={ref}>
-      <Title>{t("page-primer-contents-stewards")}</Title>
-      <Section>
-        <div
-          css={css`
-            margin-bottom: 40px;
-            @media (min-width: 1024px) {
-              max-width: 570px;
-              margin-bottom: 80px;
-            }
-          `}>
-          <p>{t("page-primer-contents-stewards-text-one")}</p>
-          <p>{t("page-primer-contents-stewards-text-two")}</p>
-        </div>
-        <Orchestration src="/images/primer/section-13-gitcoindao-workstreams.svg" />
-        <div
-          css={css`
-            @media (min-width: 1024px) {
-              max-width: 570px;
-            }
-          `}>
-          <p>{t("page-primer-contents-stewards-text-three")}</p>
-        </div>
-      </Section>
+    <Container>
+      <Title>{t("page-primer-contents-mission-h3-one")}</Title>
+
+      <Section1>
+        <Text>
+          <p>{t("page-primer-contents-mission-text-one")}</p>
+        </Text>
+        <AstronautAndRobot src="/images/primer/section-11-astronauts-and-robot.svg" />
+      </Section1>
+
+      <Section2>
+        <AstronautStanding src="/images/primer/section-12-astronaut-standing.svg" />
+        <Text>
+          <p>{t("page-primer-contents-mission-text-two")}</p>
+          <p>{t("page-primer-contents-mission-text-three")}</p>
+        </Text>
+      </Section2>
+      
+      <Section3>
+        <AstronautsMeteorLamp src="/images/primer/section-13-astronauts-meteor-lamp.svg" />
+      </Section3>
     </Container>
   );
 };

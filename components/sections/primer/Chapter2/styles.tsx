@@ -1,64 +1,60 @@
 import styled from "@emotion/styled";
 
+export const Root = styled.div({
+  backgroundImage: `url('/images/primer/section-9-tokens.svg')`,
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "100%",
+  backgroundPosition: "0 0px",
+  marginBottom: 40,
+  ["@media (min-width: 1024px)"]: {
+    marginBottom: 0,
+    backgroundSize: "100% 100%",
+    backgroundPosition: "top",
+  },
+});
+
 export const Container = styled.div({
   maxWidth: 1024,
-  margin: "0 auto 40px",
-  padding: "0 24px",
+  margin: "0 auto 11px",
+  padding: "11px 11px 0",
+  overflow: "hidden",
   ["@media (min-width: 1024px)"]: {
     padding: 0,
-    margin: "0 auto 224px",
+    overflow: "initial",
+    margin: "0 auto 51px",
   },
 });
 
 export const Title = styled.h2({
   transform: "rotate(3deg)",
-  fontSize: "40px",
+  fontSize: "60px",
   textAlign: "center",
-  lineHeight: "50px",
+  lineHeight: "60px",
   fontWeight: 100,
+  position: "relative",
   textTransform: "uppercase",
-  marginBottom: "48px",
+  marginBottom: 40,
   ["@media (min-width: 1024px)"]: {
-    fontSize: "50px",
-    lineHeight: "50px",
-    marginBottom: "80px",
+    
+    marginBottom: 40,
   },
 });
 
-export const List = styled.div({
-  display: "grid",
-  gridTemplateColumns: "100%",
-  ["@media (min-width: 1024px)"]: {
-    gridTemplateColumns: "33.33% 33.33% 33.33%",
-    margin: "0 -24px",
-  },
-});
-
-export const Item = styled.div({
-  margin: "0 0 40px",
-  ["@media (min-width: 1024px)"]: {
-    paddingRight: "24px",
-    margin: "0 24px",
-  },
-});
-
-export const Header = styled.div({
+export const Section = styled.div({
   display: "flex",
   alignItems: "center",
-  marginBottom: "32px",
+  flexDirection: "column",
+  justifyContent: "center",
 });
 
-export const Icon = styled.img({
-  width: 80,
-  height: 80,
-  marginRight: 8,
-  marginBottom: 0,
+
+export const Text = styled.div({
+
+  marginBottom: 40,
+  ["@media (min-width: 1024px)"]: {
+    width: "400px",
+    marginBottom: 0,
+  },
 });
 
-export const Text = styled.h3({
-  fontSize: "28px",
-  lineHeight: "38px",
-  margin: 0,
-});
 
-export const Body = styled.div({});

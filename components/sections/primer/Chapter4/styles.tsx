@@ -6,42 +6,95 @@ export const Container = styled.div({
   padding: "0 24px",
   overflow: "hidden",
   ["@media (min-width: 1024px)"]: {
-    padding: "24px 0 0 0",
     overflow: "initial",
-    margin: "0 auto 200px",
+    padding: 0,
+    margin: "0 auto 160px",
   },
 });
 
 export const Title = styled.h2({
-  transform: "rotate(-3deg)",
-  fontSize: "28px",
+  transform: "rotate(3deg)",
+  fontSize: "60px",
   textAlign: "center",
-  lineHeight: "40px",
+  lineHeight: "60px",
   fontWeight: 100,
+  position: "relative",
   textTransform: "uppercase",
-  marginBottom: "48px",
+  marginBottom: 80,
   ["@media (min-width: 1024px)"]: {
-    fontSize: "54px",
-    lineHeight: "56px",
-    marginBottom: "80px",
+    marginBottom: 80,
+
   },
 });
 
-export const Section = styled.div({
-  display: "flex",
-  alignItems: "center",
-  flexDirection: "column",
-  justifyContent: "center",
+export const Text = styled.div({
+  marginBottom: 40,
+  ["@media (min-width: 1024px)"]: {
+    width: "400px",
+    marginBottom: 0,
+    marginRight: 40,
+  },
 });
 
-export const Orchestration = styled.img({
+export const Section1 = styled.div({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column-reverse",
+  ["@media (min-width: 1024px)"]: {
+    marginBottom: 40,
+    flexDirection: "row",
+  },
+});
+
+export const Section2 = styled.div({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  flexDirection: "column",
+  ["@media (min-width: 1024px)"]: {
+    flexDirection: "row",
+    marginBottom: "40px",
+  },
+});
+
+export const Section3 = styled.div({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  marginBottom: 0,
+  flexDirection: "column-reverse",
+  ["@media (min-width: 1024px)"]: {
+    flexDirection: "row",
+    marginBottom: "-80px",
+  },
+});
+
+export const AstronautAndRobot = styled.img({
   width: "100%",
   marginBottom: 40,
-  transform: "scale(1.7)",
-  padding: "80px 0",
   ["@media (min-width: 1024px)"]: {
-    marginBottom: 80,
-    padding: 0,
-    transform: "initial",
+    width: "auto",
+    marginBottom: 0,
+  },
+});
+
+export const AstronautStanding = styled.img({
+  width: "100%",
+  marginBottom: 40,
+  marginRight: -40,
+  ["@media (min-width: 1024px)"]: {
+    width: "auto",
+    marginBottom: 0,
+    marginRight: 40,
+  },
+});
+
+export const AstronautsMeteorLamp = styled.img({
+  width: "100%",
+  marginBottom: -40,
+  ["@media (min-width: 1024px)"]: {
+    width: "auto",
+    marginBottom: -40,
   },
 });

@@ -1,6 +1,6 @@
-# primer-gitcoindao
+# primer-gitcoin
 
-Explain GitcoinDAO like I'm 5 (or 50)
+Explain Gitcoin like I'm 5 (or 50)
 
 # Build Instructions
 
@@ -8,7 +8,7 @@ Explain GitcoinDAO like I'm 5 (or 50)
 
 ## Acknowledgements
 
-The GitcoinDAO Primer makes use of the following open source projects:
+The Gitcoin Primer makes use of the following open source projects:
 
 - [Livepeer Primer](http://livepeer.org/primer)
 - [Marketing, Merch, Memes](https://m-m-m.xyz) Graphics
