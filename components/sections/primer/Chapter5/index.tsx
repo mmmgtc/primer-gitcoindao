@@ -77,7 +77,7 @@ const Chapter5 = ({ onChange, data }) => {
 
           <Item>
             <p style={{ marginBottom: -5 }}>{t("page-primer-contents-involved-contribute")}</p>
-            <Link href="https://gitcoin.com" passHref>
+            <Link href="https://gitcoindao.com" passHref>
               <Button target="_blank" style={{ marginBottom: 20 }}>{t("page-primer-contents-involved-contribute-btn")}
               </Button>
             </Link>
